@@ -1,10 +1,12 @@
 import React from "react";
+import noorDistributionImg from '../assets/images/noor-distribution.jpg';
 import smartClassroomImg from '../assets/images/smart-classroom.png';
 import libraryManagementImg from '../assets/images/library-management.jpg';
 import Chip from '@mui/material/Chip';
 import '../assets/styles/Project.scss';
 
 function Project() {
+    const projectNoorTech = ["JavaScript", "HTML5", "CSS3 / SCSS", "Responsive Design", "Vercel"];
     const projectOneTech = ["ESP32", "INMP441", "Node.js", "Express", "Google Speech-to-Text API", "MongoDB"];
     const projectTwoTech = ["PHP", "MySQL", "HTML", "CSS"];
 
@@ -12,6 +14,26 @@ function Project() {
     <div className="projects-container" id="projects">
         <h1>Projects</h1>
         <div className="projects-grid">
+            <div className="project">
+                <a href="https://noordistributin.vercel.app" target="_blank" rel="noreferrer">
+                    <img src={noorDistributionImg} className="zoom" alt="Noor Distributers Web Platform" width="100%"/>
+                </a>
+                <a href="https://noordistributin.vercel.app" target="_blank" rel="noreferrer">
+                    <h2>Noor Distributers — Disposable & Packaging Web Platform</h2>
+                </a>
+                <p className="project-date">Aug '26</p>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '12px' }}>
+                    {projectNoorTech.map((tech, idx) => (
+                        <Chip key={idx} className="chip" label={tech} size="small" />
+                    ))}
+                </div>
+                <ul>
+                    <li>Designed and developed a responsive B2B wholesale catalog and distribution web application for disposable tableware, packaging, and catering supplies.</li>
+                    <li>Implemented direct WhatsApp order routing, interactive product category filtering, and dynamic modal inquiry forms for real-time quotation requests.</li>
+                    <li>Engineered mobile-first, high-performance UI deployed on Vercel with optimized asset delivery and contact integrations.</li>
+                </ul>
+            </div>
+
             <div className="project">
                 <a href="https://github.com/mohammadtahir-doc" target="_blank" rel="noreferrer">
                     <img src={smartClassroomImg} className="zoom" alt="AI-Integrated Smart Classroom Microphone System" width="100%"/>
